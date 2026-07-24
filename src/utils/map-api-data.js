@@ -1,10 +1,14 @@
+const first = (value) => (Array.isArray(value) ? value[0] : value) || null;
+
 export const mapApiData = (jobs) => {
-    // Log the jobs array for debugging
-    return jobs.map(job => ( { 
-        title: job.title?.[0] ? job.title[0] : 'nespecificat', 
-        company: job.company?.[0] ? job.company[0] : 'nespecificat', 
-        location: job.location?.[0] ? job.location[0] : 'nespecificat', 
-        country: job.country?.[0] ? job.country[0] : 'nespecificat', 
-        link: job.link?.[0] ? job.link[0] : 'nespecificat' 
+    return jobs.map(job => ({
+        title: job.title || 'nespecificat',
+        company: job.company || 'nespecificat',
+        location: first(job.location),
+        county: first(job.county),
+        workmode: job.workmode || null,
+        salary: first(job.salary),
+        date: job.date || null,
+        link: job.url || 'nespecificat'
     }))
 }

@@ -11,8 +11,6 @@ const WORKMODE_LABELS = {
   hybrid: 'Hibrid'
 };
 
-const getFirst = (value) => (Array.isArray(value) ? value[0] : value);
-
 const formatDate = (date) => {
   const parsed = new Date(date);
 
@@ -22,8 +20,7 @@ const formatDate = (date) => {
 };
 
 export const Job = ({ title, company, location, county, workmode, salary, date, link }) => {
-  const jobLocation = getFirst(location) || getFirst(county);
-  const jobSalary = getFirst(salary);
+  const jobLocation = location || county;
   const postedOn = formatDate(date);
   const workmodeLabel = WORKMODE_LABELS[workmode] || workmode;
 
@@ -35,7 +32,7 @@ export const Job = ({ title, company, location, county, workmode, salary, date, 
         {jobLocation && (
           <p className='location'><img src={mapPin} alt='map pin' className='icon' />{jobLocation}</p>
         )}
-        {(workmodeLabel || jobSalary || postedOn) && (
+        {(workmodeLabel || salary || postedOn) && (
           <div className='meta'>
             {workmodeLabel && (
               <span className='badge'>
@@ -43,7 +40,7 @@ export const Job = ({ title, company, location, county, workmode, salary, date, 
                 {workmodeLabel}
               </span>
             )}
-            {jobSalary && <span className='badge salary'>{jobSalary}</span>}
+            {salary && <span className='badge salary'>{salary}</span>}
             {postedOn && <span className='posted-date'>Publicat pe {postedOn}</span>}
           </div>
         )}

@@ -7,7 +7,7 @@ export const getData = async (queryParams) => {
     const response = await fetch(`https://api.peviitor.ro/${API_VERSION}/search/?${createQueryString(queryParams)}`);
     const data = await response.json();
     return {
-        jobs: data.response.docs,
+        jobs: mapApiData(data.response.docs),
         total: data.response.numFound
     };
 }

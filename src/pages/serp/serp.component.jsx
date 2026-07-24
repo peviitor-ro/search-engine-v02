@@ -110,7 +110,7 @@ export const SerpPage = () => {
       <div className="main-wrapper flex-column margin-top-0">
         <TotalResults total={total} />
         <section className="jobs">
-          {jobs.map(({ title, company, location, county, workmode, salary, date, url }, idx) => (
+          {jobs.map(({ title, company, location, county, workmode, salary, date, link }, idx) => (
             <Job
               key={idx}
               title={title}
@@ -120,7 +120,7 @@ export const SerpPage = () => {
               workmode={workmode}
               salary={salary}
               date={date}
-              link={url}
+              link={link}
             />
           ))}
         </section>
