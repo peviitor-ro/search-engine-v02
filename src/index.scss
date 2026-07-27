@@ -1,6 +1,6 @@
-@import './styles/reset.css';
-@import './styles/classes.scss';
-@import './styles/custom-fonts.css';
+@use './styles/reset.css';
+@use './styles/classes.scss';
+@use './styles/custom-fonts.css';
 
 body {
   margin: 0;
