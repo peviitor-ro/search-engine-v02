@@ -32,7 +32,7 @@ export const Footer = () => {
           </a>
           <a
             className="icon"
-            href="https://github.com/peviitor-ro/ui-js/issues"
+            href="https://github.com/peviitor-ro/search-engine-v02/issues"
             target="_blank"
             rel="noreferrer"
           >
