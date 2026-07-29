@@ -54,7 +54,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.oportunitatisicariere.ro/voluntari"
+                  href="https://oportunitatisicariere.ro/implica-te.html"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -68,9 +68,6 @@ export const Footer = () => {
           <h3 className="title">Informații suplimentare</h3>
           <nav>
             <ul>
-              <li>
-                <a href="https://firme.peviitor.ro/">Firme</a>
-              </li>
               <li>
                 <a
                   href="https://legal.peviitor.ro/"
